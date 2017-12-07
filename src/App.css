@@ -1,0 +1,47 @@
+h1.homeTitle {
+  font-weight: normal;
+  text-align: center;
+  margin-top: 10px !important;
+}
+
+p.postPlaceholder {
+  text-align: center;
+  margin-top: 100px !important;
+  font-size: 18px;
+}
+
+.newPost {
+  position: relative;
+  top: 250px;
+  left: 900px;
+}
+
+.createPostTitle {
+  font-weight: normal;
+  text-align: center;
+  margin-top: 10px !important;
+}
+
+.postTitle, .message, .postUser, .inputTitle {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.messageBox {
+  margin-left: 20px;
+  margin-top: 10px;
+  height: 250px;
+  width: 1400px;
+}
+
+.createButton {
+  display: block;
+  float: right;
+  margin-right: 18px !important;
+}
+
+.cancelButton {
+    position: relative;
+    left: 1210px;
+}
