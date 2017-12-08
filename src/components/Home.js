@@ -1,5 +1,4 @@
 import React from 'react';
-// import Create from './Create';
 import Message from './Message';
 import Posts from './Posts';
 import { Button } from 'semantic-ui-react';
@@ -19,16 +18,6 @@ export default class Home extends React.Component {
 		event.preventDefault();
 		this.props.history.push('/new');
 	}
-
-	// this.props.history.push({
-	//   pathname: '/template',
-	//   search: '?query=abc',
-	//   state: { detail: response.data }
-	// })
-
-	// handlePosts = (data) => {
-	// 	this.setState({ posts: data})
-	// }
 
 	render() {
 
