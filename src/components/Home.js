@@ -17,7 +17,7 @@ export default class Home extends React.Component {
 
 	handleClick = (event) => {
 		event.preventDefault();
-		this.props.history.push('/create');
+		this.props.history.push('/new');
 	}
 
 	// this.props.history.push({

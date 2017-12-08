@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Form } from 'semantic-ui-react';
-// import Posts from './Posts';
+import Post from './Post';
 
 export default class Create extends React.Component {
 
@@ -28,11 +28,16 @@ export default class Create extends React.Component {
 	handleCreate = (event) => {
 		event.preventDefault();
 		// go to the single post
+		console.log("clicked button")
+		this.props.getData(this.state);
+		this.props.history.push('/post');
 	}
 
 	render() {
 
-		console.log(this.state)
+	// let newPost = this.state.posts === true ? <Post data={this.state} /> : null
+
+	let showPost = this.state.clickButton === true ? <Post title={this.state.title} message={this.state.message} user={this.state.user} /> : null
 
 		return (
 			<div className="createForm">
@@ -40,46 +45,29 @@ export default class Create extends React.Component {
 				Create a New Post
 			</h1>
 
-			<Form>
+			<Form onSubmit={this.handleCreate}>
 				<Form.Field>
-					<label>Post Title:</label>
-					<input className="inputTitle" placeholder="" fluid="true" onChange={this.handleChange} value={this.state.title} type="text" name="title" />
+					<label className="inputTitle">Post Title:</label>
+					<input  placeholder="" fluid="true" onChange={this.handleChange} value={this.state.title} type="text" name="title" />
 				</Form.Field>
-			</Form>
-			<Form>
+
 				<Form.Field>
-					<label>Message:</label>
-					<input className="messageBox" placeholder="" fluid="true" onChange={this.handleChange} value={this.state.message} type="text" name="message" />
+					<label className="messageBox">Message:</label>
+					<input  placeholder="" fluid="true" onChange={this.handleChange} value={this.state.message} type="text" name="message" />
 				</Form.Field>
-			</Form>
-			<Form>
+
 				<Form.Field>
-					<label>User:</label>
-					<input className="inputTitle" placeholder="" fluid="true" onChange={this.handleChange} value={this.state.user} type="text" name="user" />
+					<label className="inputTitle">User:</label>
+					<input placeholder="" fluid="true" onChange={this.handleChange} value={this.state.user} type="text" name="user" />
 				</Form.Field>
 				
 				<Button className="cancelButton" onClick={this.handleCancel}>Cancel</Button>
-				<Button className="createButton" onClick={this.handleCreate}>Create Post</Button>
+				<Button className="createButton">Create Post</Button>
 			</Form>
 
-
+			{showPost}
 
 			</div>
 		)
 	}
 }
-
-				// <p className="postTitle">Post Title:
-				// </p>
-				// <Input className="inputTitle" placeholder="" fluid={true} onChange={this.handleChange} value={this.state.title} type="text" name="title" />
-
-				// <p className="message">
-				// 	Message:
-				// </p>
-				// <Input className="messageBox" placeholder="" fluid={true} onChange={this.handleChange} value={this.state.message} type="text" name="message" />
-
-				// <p className="postUser">
-				// 	User:
-				// </p>
-				// <Input className="inputTitle" placeholder="" fluid={true} onChange={this.handleChange} value={this.state.user} type="text" name="user" />
-				// <br />
