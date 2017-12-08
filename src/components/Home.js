@@ -9,8 +9,7 @@ export default class Home extends React.Component {
 		super(props)
 
 		this.state = {
-			posts: [],
-			showMessage: true
+			posts: this.props
 		}
 	}
 
@@ -21,14 +20,14 @@ export default class Home extends React.Component {
 
 	render() {
 
-	let message = this.state.posts === null ? <Posts /> : <Message /> 
+	console.log("home", this.props)
+
+	let message = this.props.posts.length === 0 ? <Message /> : <Posts posts={this.props.posts} />
 
 		return (
 			<div className="messageBoardContainer">
 				<h1 className="homeTitle">The Fairygodboss Message Board</h1>
-					
-					{message}
-				
+				{message}
 				<Button className="newPost" onClick={this.handleClick}>Create New Post</Button>
 			</div>
 		)

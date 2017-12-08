@@ -3,7 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import Create from './components/Create';
 import { Route } from 'react-router-dom';
-import Post from './components/Post';
+import New from './components/New';
 
 
 class App extends Component {
@@ -12,32 +12,28 @@ class App extends Component {
     super();
 
     this.state = {
-      title: "",
-      message: "",
-      user: "",
-      date: "",
+      posts: []
     }
   }
 
-  getData = (data) => {
+  addData = (data) => {
+    console.log("data", data);
     this.setState({
-      title: data.title,
-      message: data.message,
-      user: data.user,
-      date: data.date
-
+      posts: this.state.posts.concat(data)
     })
   }
 
   render() {
 
-    console.log(this.state.date, "in app")
+  // console.log("app state", this.state.posts);
   
     return (
       <div className="App">
-        <Route exact path="/" component={Home} />
-        <Route exact path="/new" render={({history}) => <Create getData={this.getData} history={history} />} />
-        <Route exact path="/post" render={({history}) => <Post history={history} title={this.state.title} message={this.state.message} user={this.state.user}  />} />
+        <Route exact path="/" render={({history}) => <Home history={history} posts={this.state.posts} />} />
+
+        <Route exact path="/new" render={({history}) => <Create addData={this.addData} history={history} />} />
+
+        <Route exact path="/post" render={({history}) => <New history={history} posts={this.state.posts} />} />
 
       </div>
   

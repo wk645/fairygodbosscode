@@ -1,24 +1,19 @@
 import React from 'react';
-import Responses from './Responses';
+// import Responses from './Responses';
 import Back from './Back';
-// import Reply from './Reply';
 
 const Post = (props) => {
 
-	console.log("in post", props)
+	console.log("in post", props.posts)
 
-	// props.location.state.message
 
 	return (
 		<div className="viewPostContainer">
-			<h1 className="viewPostTitle">{props.title}</h1>
-			<p className="viewPostPoster">By: {props.user}    On: {props.date}</p>
+			<h1 className="viewPostTitle">{props.posts.title}</h1>
+			<p className="viewPostPoster">By: {props.posts.user}    On: {props.posts.date}</p>
 			<br />
-			<p className="viewPostMessage">{props.message}</p>
-			<Back />
+			<p className="viewPostMessage">{props.posts.message}</p>
 			<hr />
-
-			<Responses />
 
 		</div>
 	)

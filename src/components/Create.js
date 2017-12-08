@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Form } from 'semantic-ui-react';
-import Post from './Post';
 import dateFormat from 'dateformat';
 
 export default class Create extends React.Component {
@@ -12,7 +11,7 @@ export default class Create extends React.Component {
 			title: "",
 			message: "",
 			user: "",
-			date: new Date()
+			date: dateFormat(new Date(), "dddd, mmmm dS, yyyy, h:MM:ss TT")
 		}
 	}
 
@@ -28,23 +27,19 @@ export default class Create extends React.Component {
 	}
 
 	handleCreate = (event) => {
-		var now = new Date();
-
 		event.preventDefault();
-		this.props.getData(this.state);
+		// this.state.posts.push({
+		// 	title: this.state.title,
+		// 	message: this.state.message,
+		// 	user: this.state.user,
+		// 	date: this.state.date
+		// })
+		// this.setState({ posts: this.state.posts })
+		this.props.addData(this.state);
 		this.props.history.push('/post');
-		this.setState({
-			title: "",
-			message: "",
-			user: ""
-		})
 	}
 
 	render() {
-
-	console.log(this.state.date);
-
-	let showPost = this.state.clickButton === true ? <Post title={this.state.title} message={this.state.message} user={this.state.user} date={this.state.date} /> : null
 
 		return (
 			<div className="createForm">
@@ -71,8 +66,6 @@ export default class Create extends React.Component {
 				<Button className="cancelButton" onClick={this.handleCancel}>Cancel</Button>
 				<Button className="createButton">Create Post</Button>
 			</Form>
-
-			{showPost}
 
 			</div>
 		)

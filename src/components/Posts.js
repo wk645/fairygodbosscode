@@ -1,5 +1,5 @@
 import React from 'react';
-// import Post from './Post';
+import Post from './Post';
 
 export default class Posts extends React.Component {
 
@@ -14,15 +14,16 @@ export default class Posts extends React.Component {
 
 	render() {
 
-	// let post = this.props.posts.map((post, index) => <Post post={post} key={index} />)
+	console.log("in posts", this.props)
+
+	let post = this.props.posts.length === 0 ? null : this.props.posts.map((p, index) => <Post posts={p} key={index} />)
+
+	// console.log("mapped", post)
 
 		return (
 			<div>
-				<h1>Posts</h1>
-				
+			{post}
 			</div>
 		)
 	}
 }
-
-// pass Post props up to App.js down to Posts.js

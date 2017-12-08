@@ -16,13 +16,13 @@ export default class Responses extends React.Component {
 		console.log(data);
 
 		this.setState({
-			responses: data
+			responses: this.state.responses.concat(data)
 		})
 	}
 
 	render() {
 
-	console.log("state", this.state.responses);
+	// console.log("state", this.state.responses);
 
 	let response = this.state.responses.map((resp, index) => <Response response={resp} key={index} />)
 
