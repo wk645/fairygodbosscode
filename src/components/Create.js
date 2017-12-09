@@ -57,8 +57,11 @@ export default class Create extends React.Component {
 					<input className="inputUserBox" placeholder="" fluid="true" onChange={this.handleChange} value={this.state.user} type="text" name="user" />
 				</Form.Field>
 				
+				<div className="createButtonDiv">
 				<Button className="cancelButton" onClick={this.handleCancel}>Cancel</Button>
 				<Button className="createButton">Create Post</Button>
+				</div>
+
 			</Form>
 
 			</div>

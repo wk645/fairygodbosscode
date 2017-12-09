@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
+
+.viewPostTitle, h3.responsesHeader, h1.homeTitle, p.postPlaceholder, h1.createPostTitle {
+  font-family: 'Slabo 27px', serif;
+}
+
 h1.homeTitle {
   font-weight: normal;
   text-align: center;
-  margin-top: 10px !important;
+  margin-top: 20px !important;
 }
 
 p.postPlaceholder {
   text-align: center;
   margin-top: 100px !important;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .newPost {
@@ -17,14 +23,18 @@ p.postPlaceholder {
 }
 
 label.inputTitle, label.messageBox, label.inputUser, input.inputTitleBox, input.messageBox, input.inputUserBox, label.replyMessage, label.replyUser, input.replyMessageBox, input.replyUserBox {
+
   margin-left: 20px !important;
   margin-right: 20px !important;
+  font-family: 'Slabo 27px', serif !important;
+
 }
+
 
 .createPostTitle {
   font-weight: normal;
   text-align: center;
-  margin-top: 10px !important;
+  margin-top: 20px !important;
 }
 
 .messageBox {
@@ -41,41 +51,55 @@ label.inputTitle, label.messageBox, label.inputUser, input.inputTitleBox, input.
 
 .cancelButton {
     position: relative;
-    left: 1685px;
+    /*left: 1685px;*/
+}
+
+.createButtonDiv {
+  float: right;
+  margin-right: 15px;
+  margin-top: 20px;
 }
 
 button.ui.button.postReplyButton {
   display: block;
   float: right;
-  margin-right: 30px;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
 button.ui.button.backButton {
   position: relative;
   float: right;
-  bottom: 75px;
-  margin-right: 30px;
+  bottom: 95px;
+  margin-right: 20px;
 }
 
 .viewPostTitle {
   margin-left: 20px;
   font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 0px;
 }
 
 .viewPostMessage, .viewPostPoster, .replyMessage, .replyUser {
   margin-left: 20px;
-  font-size: 18px;
+}
+
+.viewPostMessage {
+  margin-top: 40px;
+  font-family: 'Slabo 27px', serif;
 }
 
 .responsesHeader {
   margin-left: 20px;
   font-weight: normal;
   margin-top: 20px;
+  margin-bottom: 30px;
   /*margin-bottom: 150px;*/
 }
 
 .divider {
-  margin-top: 30px;
+  margin-top: 100px;
   margin-bottom: 50px;
 }
 
@@ -100,10 +124,46 @@ div.homePostsContainer>p {
   margin-left: 10px;
 }
 
+div.viewPostContainer {
+  margin-top: 30px;
+  font-family: 'Slabo 27px', serif;
+
+}
+
 .span {
   margin-left: 10px;
+  font-family: 'Slabo 27px', serif;
+}
+
+span.viewPostPoster {
+  font-family: 'Slabo 27px', serif;
+  margin-right: 50px;
+}
+
+span.date {
+  margin-left: 50px;
+  font-family: 'Slabo 27px', serif;
 }
 
 
+div.field {
+  margin-right: 40px !important;
+  font-family: 'Slabo 27px', serif;;
+}
+
+hr.responseDivider {
+  border-style: dotted;
+  border-width: 2px;
+}
+
+div.replies {
+  margin-top: 20px;
+  font-family: 'Slabo 27px', serif;
+
+}
+
+button.ui.button {
+  font-family: 'Slabo 27px', serif;
+}
 
 

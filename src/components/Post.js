@@ -9,8 +9,9 @@ const Post = (props) => {
 
 	return (
 		<div className="viewPostContainer">
+			<hr />	
 			<h1 className="viewPostTitle">{props.posts.title}</h1>
-			<p className="viewPostPoster">By: {props.posts.user}    On: {props.posts.date}</p>
+			<span className="viewPostPoster">By: {props.posts.user}</span>    <span className="date">On: {props.posts.date}</span>
 			<br />
 			<p className="viewPostMessage">{props.posts.message}</p>
 			<hr />
