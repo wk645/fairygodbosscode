@@ -28,15 +28,9 @@ export default class Create extends React.Component {
 
 	handleCreate = (event) => {
 		event.preventDefault();
-		// this.state.posts.push({
-		// 	title: this.state.title,
-		// 	message: this.state.message,
-		// 	user: this.state.user,
-		// 	date: this.state.date
-		// })
-		// this.setState({ posts: this.state.posts })
 		this.props.addData(this.state);
-		this.props.history.push('/post');
+		// this.props.history.push('/post');
+		// this.props.history.push(`/post/${this.state.id}`)
 	}
 
 	render() {

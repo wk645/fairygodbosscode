@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Create from './components/Create';
 import { Route } from 'react-router-dom';
 import New from './components/New';
+import { withRouter } from 'react-router';
 
 
 class App extends Component {
@@ -18,14 +19,16 @@ class App extends Component {
 
   addData = (data) => {
     console.log("data", data);
+    data.id = this.state.posts.length + 1
     this.setState({
       posts: this.state.posts.concat(data)
     })
+    this.props.history.push(`/post/${data.id}`)
   }
 
   render() {
 
-  // console.log("app state", this.state.posts);
+  console.log("app state", this.state);
   
     return (
       <div className="App">
@@ -33,7 +36,7 @@ class App extends Component {
 
         <Route exact path="/new" render={({history}) => <Create addData={this.addData} history={history} />} />
 
-        <Route exact path="/post" render={({history}) => <New history={history} posts={this.state.posts} />} />
+        <Route path="/post/:id" render={({history}) => <New history={history} posts={this.state.posts} />} />
 
       </div>
   
@@ -41,4 +44,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

@@ -1,6 +1,6 @@
 import React from 'react';
 // import Responses from './Responses';
-import Back from './Back';
+// import Back from './Back';
 
 const Post = (props) => {
 

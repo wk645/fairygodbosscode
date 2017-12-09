@@ -1,7 +1,9 @@
 import React from 'react';
 import Message from './Message';
-import Posts from './Posts';
 import { Button } from 'semantic-ui-react';
+import { Route } from 'react-router-dom';
+import Posts from './Posts';
+import Post from './Post';
 
 export default class Home extends React.Component {
 
@@ -20,7 +22,8 @@ export default class Home extends React.Component {
 
 	render() {
 
-	console.log("home", this.props)
+	// console.log("home", this.props)
+	// console.log(this.props.match)
 
 	let message = this.props.posts.length === 0 ? <Message /> : <Posts posts={this.props.posts} />
 
