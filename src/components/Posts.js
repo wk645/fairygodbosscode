@@ -1,7 +1,8 @@
 import React from 'react';
 import Post from './Post';
+import { withRouter } from 'react-router';
 
-export default class Posts extends React.Component {
+class Posts extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -16,7 +17,7 @@ export default class Posts extends React.Component {
 
 	console.log("in posts", this.props)
 
-	let post = this.props.posts.length === 0 ? null : this.props.posts.map((p, index) => <Post posts={p} key={index} />)
+	let post = this.props.posts.length === 0 ? null : this.props.posts.map((p, index) => <Post posts={p} key={index} goToPost={this.props.goToPost} />)
 
 	// console.log("mapped", post)
 
@@ -27,3 +28,5 @@ export default class Posts extends React.Component {
 		)
 	}
 }
+
+export default withRouter(Posts);

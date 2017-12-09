@@ -26,13 +26,19 @@ class App extends Component {
     this.props.history.push(`/post/${data.id}`)
   }
 
+  goToPost = (data) => {
+    console.log("details", data);
+    this.props.history.push(`/post/${data.id}`)
+    // this.props.history.push(`/post/${event.target.value}`)
+  }
+
   render() {
 
   console.log("app state", this.state);
   
     return (
       <div className="App">
-        <Route exact path="/" render={({history}) => <Home history={history} posts={this.state.posts} />} />
+        <Route exact path="/" render={({history}) => <Home history={history} posts={this.state.posts} goToPost={this.goToPost} />} />
 
         <Route exact path="/new" render={({history}) => <Create addData={this.addData} history={history} />} />
 

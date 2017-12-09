@@ -12,6 +12,7 @@ const New = (props) => {
 
 	return (
 			<div className="viewPostContainer">
+			<hr />
 			<h1 className="viewPostTitle">{currentPost.title}</h1>
 			<p className="viewPostPoster">By: {currentPost.user}    On: {currentPost.date}</p>
 			<br />

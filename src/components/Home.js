@@ -1,9 +1,9 @@
 import React from 'react';
 import Message from './Message';
 import { Button } from 'semantic-ui-react';
-import { Route } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
 import Posts from './Posts';
-import Post from './Post';
+// import Post from './Post';
 
 export default class Home extends React.Component {
 
@@ -25,7 +25,7 @@ export default class Home extends React.Component {
 	// console.log("home", this.props)
 	// console.log(this.props.match)
 
-	let message = this.props.posts.length === 0 ? <Message /> : <Posts posts={this.props.posts} />
+	let message = this.props.posts.length === 0 ? <Message /> : <Posts posts={this.props.posts} goToPost={this.props.goToPost} />
 
 		return (
 			<div className="messageBoardContainer">

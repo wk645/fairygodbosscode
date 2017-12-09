@@ -166,4 +166,11 @@ button.ui.button {
   font-family: 'Slabo 27px', serif;
 }
 
+button.ui.button.detailButton {
+  float: right;
+  position: relative;
+  bottom: 95px;
+  margin-right: 20px;
+}
+
 
