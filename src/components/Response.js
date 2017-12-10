@@ -7,7 +7,7 @@ const Response = (props) => {
 			<p className="responseUser">{props.response.user}:</p>
 			<p className="responseMessage">{props.response.message}</p>
 			<br />
-			<hr />
+			<hr className="replyDivider"/>
 		</div>
 	)
 }

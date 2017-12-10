@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Button } from 'semantic-ui-react';
+import AlertContainer from 'react-alert';
 
 export default class ReplyForm extends React.Component {
 
@@ -12,6 +13,14 @@ export default class ReplyForm extends React.Component {
 		}
 	}
 
+	alertOptions = {
+	    offset: 14,
+	    position: 'top left',
+	    theme: 'dark',
+	    time: 3000,
+	    transition: 'fade'
+  	}
+
 	handleChange = (event) => {
 		this.setState({
 			[event.target.name]: event.target.value
@@ -23,19 +32,27 @@ export default class ReplyForm extends React.Component {
 		let array = [];
 		let obj = Object.assign({}, this.state);
 		array.push(obj);
-		
-		this.props.getResponses(array);
 
-		this.setState({ 
-			message: "",
-			user: ""
-		})
+		if (this.state.message === "") {
+			this.msg.error("You can't leave the message field empty!")
+		} else if (this.state.user === "") {
+			this.msg.error("You can't leave the user field empty!")
+		} else {
+			this.props.getResponses(array);
+			this.setState({ 
+				message: "",
+				user: ""
+			})	
+		}
+		
+
 	}
 
 	render() {
 
 		return (
 			<Form onSubmit={this.handleSubmit}>
+      		<AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
 
 				<Form.Field>
 					<label className="replyMessage">Reply Message:</label>

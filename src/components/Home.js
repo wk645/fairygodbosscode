@@ -30,8 +30,8 @@ export default class Home extends React.Component {
 		return (
 			<div className="messageBoardContainer">
 				<h1 className="homeTitle">The Fairygodboss Message Board</h1>
-				{message}
 				<Button className="newPost" onClick={this.handleClick}>Create New Post</Button>
+				{message}
 			</div>
 		)
 	}

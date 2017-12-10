@@ -13,8 +13,6 @@ export default class Responses extends React.Component {
 	}
 
 	getResponses = (data) => {
-		console.log(data);
-
 		this.setState({
 			responses: this.state.responses.concat(data)
 		})
