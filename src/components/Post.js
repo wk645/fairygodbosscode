@@ -1,12 +1,14 @@
 import React from 'react';
 import { Button } from 'semantic-ui-react';
-
+import { withRouter } from 'react-router';
 const Post = (props) => {
 
 	const handleClick = (event) => {
 		event.preventDefault();
 		props.goToPost(props.posts);
 	}
+
+	console.log(props.posts)
 
 	return (
 		<div className="viewPostContainer">
@@ -15,6 +17,7 @@ const Post = (props) => {
 			<span className="viewPostPoster">Posted By: {props.posts.user}</span>    <span className="date">On: {props.posts.date}</span>
 			<br />
 			<p className="viewPostMessage">{props.posts.message}</p>
+
 			<Button onClick={handleClick} className="detailButton">Details</Button>
 			<hr className="newPostDivider" />
 
@@ -22,4 +25,4 @@ const Post = (props) => {
 	)
 }
 
-export default Post
+export default withRouter(Post)

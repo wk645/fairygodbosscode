@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   addData = (data) => {
-    // console.log("data", data);
     data.id = this.state.posts.length + 1
     this.setState({
       posts: this.state.posts.concat(data)
@@ -42,7 +41,6 @@ class App extends Component {
   }
 
   render() {
-
   
     return (
     <div className="App">

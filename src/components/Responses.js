@@ -1,8 +1,9 @@
 import React from 'react';
 import Response from './Response';
 import ReplyForm from './ReplyForm';
+import { withRouter } from 'react-router';
 
-export default class Responses extends React.Component {
+class Responses extends React.Component {
 
 	constructor(props) {
 		super(props);
@@ -13,14 +14,13 @@ export default class Responses extends React.Component {
 	}
 
 	getResponses = (data) => {
+		data.id = this.state.responses.length + 1;
 		this.setState({
 			responses: this.state.responses.concat(data)
 		})
 	}
 
 	render() {
-
-	// console.log("state", this.state.responses);
 
 	let response = this.state.responses.map((resp, index) => <Response response={resp} key={index} />)
 
@@ -35,3 +35,5 @@ export default class Responses extends React.Component {
 		)
 	}
 }
+
+export default withRouter(Responses)

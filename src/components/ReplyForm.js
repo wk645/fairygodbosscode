@@ -33,6 +33,8 @@ export default class ReplyForm extends React.Component {
 		let obj = Object.assign({}, this.state);
 		array.push(obj);
 
+		console.log("array",array);
+
 		if (this.state.message === "") {
 			this.msg.error("You can't leave the message field empty!")
 		} else if (this.state.user === "") {
@@ -44,8 +46,6 @@ export default class ReplyForm extends React.Component {
 				user: ""
 			})	
 		}
-		
-
 	}
 
 	render() {

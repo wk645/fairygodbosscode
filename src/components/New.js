@@ -1,8 +1,11 @@
 import React from 'react';
 import Responses from './Responses';
 import Back from './Back';
+import { withRouter } from 'react-router';
 
 const New = (props) => {
+
+	console.log(props.history)
 
 	let index = parseInt(props.history.location.pathname.split("/")[2], props.radix);
 
@@ -24,4 +27,4 @@ const New = (props) => {
 	)
 }
 
-export default New
+export default withRouter(New)

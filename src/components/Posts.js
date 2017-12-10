@@ -15,9 +15,11 @@ class Posts extends React.Component {
 
 	render() {
 
+		// console.log(this.props.history)
+
 	// console.log("in posts", this.props)
 
-	let post = this.props.posts.length === 0 ? null : this.props.posts.map((p, index) => <Post posts={p} key={index} goToPost={this.props.goToPost} />)
+	let post = this.props.posts.length === 0 ? null : this.props.posts.map((p, index) => <Post posts={p} key={index} goToPost={this.props.goToPost} comments={this.props.comments} />)
 
 	// console.log("mapped", post)
 
