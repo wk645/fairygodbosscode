@@ -26,7 +26,7 @@ class App extends Component {
     theme: 'dark',
     time: 3000,
     transition: 'fade'
-  }
+  };
 
   addData = (data) => {
     data.id = this.state.posts.length + 1
