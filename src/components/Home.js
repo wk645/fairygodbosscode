@@ -1,9 +1,10 @@
 import React from 'react';
 import Message from './Message';
 import { Button } from 'semantic-ui-react';
-// import { Route } from 'react-router-dom';
 import Posts from './Posts';
-// import Post from './Post';
+// import Container from 'muicss/lib/react/container';
+// import Row from 'muicss/lib/react/row';
+// import Col from 'muicss/lib/react/col';
 
 export default class Home extends React.Component {
 
@@ -22,9 +23,6 @@ export default class Home extends React.Component {
 
 	render() {
 
-	// console.log("home", this.props)
-	// console.log(this.props.match)
-
 	let message = this.props.posts.length === 0 ? <Message /> : <Posts posts={this.props.posts} goToPost={this.props.goToPost} />
 
 		return (
@@ -36,3 +34,4 @@ export default class Home extends React.Component {
 		)
 	}
 }
+

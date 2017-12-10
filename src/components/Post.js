@@ -12,7 +12,7 @@ const Post = (props) => {
 		<div className="viewPostContainer">
 			<hr className="newPostDivider" />	
 			<h1 className="viewPostTitle">{props.posts.title}</h1>
-			<span className="viewPostPoster">By: {props.posts.user}</span>    <span className="date">On: {props.posts.date}</span>
+			<span className="viewPostPoster">Posted By: {props.posts.user}</span>    <span className="date">On: {props.posts.date}</span>
 			<br />
 			<p className="viewPostMessage">{props.posts.message}</p>
 			<Button onClick={handleClick} className="detailButton">Details</Button>

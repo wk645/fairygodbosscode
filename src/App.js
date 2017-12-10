@@ -5,8 +5,10 @@ import Create from './components/Create';
 import { Route } from 'react-router-dom';
 import New from './components/New';
 import { withRouter } from 'react-router';
-// import { Responsive, Segment } from 'semantic-ui-react';
 import AlertContainer from 'react-alert';
+import Container from 'muicss/lib/react/container';
+import Row from 'muicss/lib/react/row';
+import Col from 'muicss/lib/react/col';
 
 class App extends Component {
 
@@ -36,20 +38,18 @@ class App extends Component {
   }
 
   goToPost = (data) => {
-    // console.log("details", data);
     this.props.history.push(`/post/${data.id}`)
   }
 
-  // this.msg.success(`Welcome back ${res.user.username}!`)
-
-  // this.msg.show("")
-  
   render() {
 
-  // console.log("app state", this.state);
   
     return (
-      <div className="App">
+    <div className="App">
+    <Container fluid={true}>
+    <Row>
+    <Col xs="12">
+      <Col xs="12">
       <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
 
         <Route exact path="/" render={({history}) => <Home history={history} posts={this.state.posts} goToPost={this.goToPost} />} />
@@ -57,8 +57,11 @@ class App extends Component {
         <Route exact path="/new" render={({history}) => <Create addData={this.addData} history={history} />} />
 
         <Route path="/post/:id" render={({history}) => <New history={history} posts={this.state.posts} />} />
-
-      </div>
+      </Col>
+    </Col>
+    </Row>
+    </Container>
+    </div>
     );
   }
 }

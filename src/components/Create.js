@@ -50,6 +50,7 @@ export default class Create extends React.Component {
 		return (
 			<div className="createForm">
       		<AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
+
 			
 			<h1 className="createPostTitle">
 				Create a New Post

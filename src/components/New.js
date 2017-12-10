@@ -12,7 +12,7 @@ const New = (props) => {
 			<div className="viewPostContainer">
 
 			<h1 className="viewPostTitle">{currentPost.title}</h1>
-			<span className="viewPostPoster">By: {currentPost.user}</span>    <span className="date">On: {currentPost.date}</span>
+			<span className="viewPostPoster">Posted By: {currentPost.user}</span>    <span className="date">On: {currentPost.date}</span>
 			<br />
 			<p className="viewPostMessage">{currentPost.message}</p>
 			<Back />

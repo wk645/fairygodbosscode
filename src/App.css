@@ -30,6 +30,7 @@ label.inputTitle, label.messageBox, label.inputUser, input.inputTitleBox, input.
   margin-left: 20px !important;
   margin-right: 20px !important;
   font-family: 'Slabo 27px', serif !important;
+  font-size: 15px !important;
 
 }
 
@@ -89,6 +90,7 @@ button.ui.button.backButton {
 
 .viewPostMessage, .viewPostPoster, .replyMessage, .replyUser {
   margin-left: 20px;
+  font-size: 15px;
 }
 
 .viewPostMessage {
@@ -97,10 +99,11 @@ button.ui.button.backButton {
 }
 
 .responsesHeader {
-  margin-left: 20px;
+  margin-left: 10px;
   font-weight: normal;
   margin-top: 20px;
   margin-bottom: 30px;
+  padding: 10px;
   /*margin-bottom: 150px;*/
 }
 
@@ -119,10 +122,12 @@ hr.replyDivider {
 p.responseUser {
   margin-left: 80px;
   font-weight: bold;
+  font-size: 15px;
 }
 
 p.responseMessage {
   margin-left: 80px;
+  font-size: 15px;
 }
 
 div.homePostsContainer {
@@ -146,15 +151,18 @@ div.viewPostContainer {
 .span {
   margin-left: 10px;
   font-family: 'Slabo 27px', serif;
+  font-size: 15px;
 }
 
 span.viewPostPoster {
   font-family: 'Slabo 27px', serif;
+  font-size: 15px;
 }
 
 span.date {
   margin-left: 30px;
   font-family: 'Slabo 27px', serif;
+  font-size: 15px;
 }
 
 
