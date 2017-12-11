@@ -18,7 +18,7 @@ const New = (props) => {
 	<Container>
 		<Row>
 			<Col xs="12">
-			<Col md="4">
+				<Col xs="12">
 				<div className="viewPostContainer">
 
 				<h1 className="viewPostTitle">{currentPost.title}</h1>
@@ -30,7 +30,7 @@ const New = (props) => {
 
 				<Responses />
 				</div>
-			</Col>
+				</Col>
 			</Col>
 		</Row>
 	</Container>
