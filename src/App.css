@@ -59,6 +59,7 @@ input.messageBox, input.replyMessageBox {
 .cancelButton {
     position: relative;
     /*left: 1685px;*/
+    width: 104px;
 }
 
 .createButtonDiv {

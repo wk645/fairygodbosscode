@@ -2,6 +2,9 @@ import React from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import dateFormat from 'dateformat';
 import AlertContainer from 'react-alert';
+import Container from 'muicss/lib/react/container';
+import Row from 'muicss/lib/react/row';
+import Col from 'muicss/lib/react/col';
 
 export default class Create extends React.Component {
 
@@ -49,6 +52,10 @@ export default class Create extends React.Component {
 
 		return (
 			<div className="createForm">
+			<Container fluid={true}>
+			<Row>
+			<Col xs="12">
+			<Col xs="12">
       		<AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
 
 			
@@ -72,13 +79,24 @@ export default class Create extends React.Component {
 					<input className="inputUserBox" placeholder="" fluid="true" onChange={this.handleChange} value={this.state.user} type="text" name="user" />
 				</Form.Field>
 				
-				<div className="createButtonDiv">
+				<Container>
+				<Row>
+				<Col xs="12">
+				<Col md="4">
+				<center><div className="createButtonDiv">
 				<Button className="cancelButton" onClick={this.handleCancel}>Cancel</Button>
 				<Button className="createButton">Create Post</Button>
-				</div>
+				</div></center>
+				</Col>
+				</Col>
+				</Row>
+				</Container>
 
 			</Form>
-
+			</Col>
+			</Col>
+			</Row>
+			</Container>
 			</div>
 		)
 	}
