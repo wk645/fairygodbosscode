@@ -1,40 +1,40 @@
-import React from 'react';
-import Responses from './Responses';
-import Back from './Back';
-import { withRouter } from 'react-router';
-import Container from 'muicss/lib/react/container';
-import Row from 'muicss/lib/react/row';
-import Col from 'muicss/lib/react/col';
+// import React from 'react';
+// import Responses from './Responses';
+// import Back from './Back';
+// import { withRouter } from 'react-router';
+// import Container from 'muicss/lib/react/container';
+// import Row from 'muicss/lib/react/row';
+// import Col from 'muicss/lib/react/col';
 
-const New = (props) => {
+// const New = (props) => {
 
-	console.log(props.history)
+// 	console.log(props.history)
 
-	let index = parseInt(props.history.location.pathname.split("/")[2], props.radix);
+// 	let index = parseInt(props.history.location.pathname.split("/")[2], props.radix);
 
-	let currentPost = props.posts[index-1]
+// 	let currentPost = props.posts[index-1]
 	
-	return (
-	<Container>
-		<Row>
-			<Col xs="12">
-				<Col xs="12">
-				<div className="viewPostContainer">
+// 	return (
+// 	<Container>
+// 		<Row>
+// 			<Col xs="12">
+// 				<Col xs="12">
+// 				<div className="viewPostContainer">
 
-				<h1 className="viewPostTitle">{currentPost.title}</h1>
-				<span className="viewPostPoster">Posted By: {currentPost.user}</span>    <span className="date">On: {currentPost.date}</span>
-				<br />
-				<p className="viewPostMessage">{currentPost.message}</p>
-				<Back />
-				<hr className="newPostDivider" />
+// 				<h1 className="viewPostTitle">{currentPost.title}</h1>
+// 				<span className="viewPostPoster">Posted By: {currentPost.user}</span>    <span className="date">On: {currentPost.date}</span>
+// 				<br />
+// 				<p className="viewPostMessage">{currentPost.message}</p>
+// 				<Back />
+// 				<hr className="newPostDivider" />
 
-				<Responses />
-				</div>
-				</Col>
-			</Col>
-		</Row>
-	</Container>
-	)
-}
+// 				<Responses />
+// 				</div>
+// 				</Col>
+// 			</Col>
+// 		</Row>
+// 	</Container>
+// 	)
+// }
 
-export default withRouter(New)
+// export default withRouter(New)

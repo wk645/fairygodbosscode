@@ -3,7 +3,7 @@ import './App.css';
 import Home from './components/Home';
 import Create from './components/Create';
 import { Route } from 'react-router-dom';
-import New from './components/New';
+import Post from './components/Post';
 import { withRouter } from 'react-router';
 import AlertContainer from 'react-alert';
 import Container from 'muicss/lib/react/container';
@@ -54,7 +54,7 @@ class App extends Component {
 
         <Route exact path="/new" render={({history}) => <Create addData={this.addData} history={history} />} />
 
-        <Route path="/post/:id" render={({history}) => <New history={history} posts={this.state.posts} />} />
+        <Route path="/post/:id" render={({history}) => <Post history={history} posts={this.state.posts} />} />
       </Col>
     </Col>
     </Row>
