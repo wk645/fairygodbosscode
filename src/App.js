@@ -41,6 +41,8 @@ class App extends Component {
   }
 
   render() {
+
+  console.log(this.props.history.location.pathname === '/')
   
     return (
     <div className="App">
