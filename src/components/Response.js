@@ -3,10 +3,12 @@ import React from 'react';
 
 const Response = (props) => {
 
+	// console.log("response", props);
+
 	return (
 		<div className="replies">
-			<p className="responseUser">Posted By {props.response.user}:</p>
-			<p className="responseMessage">{props.response.message}</p>
+			<p className="responseUser">Posted By {props.comments.user}:</p>
+			<p className="responseMessage">{props.comments.message}</p>
 			<br />
 			<hr className="replyDivider"/>
 		</div>

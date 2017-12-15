@@ -29,18 +29,13 @@ export default class ReplyForm extends React.Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		let array = [];
-		let obj = Object.assign({}, this.state);
-		array.push(obj);
-
-		console.log("array",array);
 
 		if (this.state.message === "") {
 			this.msg.error("You can't leave the message field empty!")
 		} else if (this.state.user === "") {
 			this.msg.error("You can't leave the user field empty!")
 		} else {
-			this.props.getResponses(array);
+			this.props.getComments(this.state);
 			this.setState({ 
 				message: "",
 				user: ""

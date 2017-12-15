@@ -1,11 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import Responses from './Responses';
-import Back from './Back';
 import Container from 'muicss/lib/react/container';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 import { Button } from 'semantic-ui-react';
+import Responses from './Responses';
+import Back from './Back';
+import ReplyForm from './ReplyForm';
 
 class Post extends React.Component {
 
@@ -13,7 +14,8 @@ class Post extends React.Component {
 		super(props);
 
 		this.state = {
-			home: false
+			post: this.props.posts,
+			comments: this.props.comments
 		}
 	}
 
@@ -23,6 +25,8 @@ class Post extends React.Component {
 	}
 
 	render() {
+
+	console.log(this.props.posts);
 
 	let index = parseInt(this.props.history.location.pathname.split("/")[2], this.props.radix);
 
@@ -56,8 +60,8 @@ class Post extends React.Component {
 								<p className="viewPostMessage">{currentPost.message}</p>
 								<Back />
 								<hr className="newPostDivider" />
-
-								<Responses />
+								<Responses comments={this.props.comments} />
+								<ReplyForm getComments={this.props.getComments} />
 								</div>
 								</Col>
 							</Col>

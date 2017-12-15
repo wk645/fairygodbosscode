@@ -1,6 +1,6 @@
 import React from 'react';
 import Response from './Response';
-import ReplyForm from './ReplyForm';
+// import ReplyForm from './ReplyForm';
 import { withRouter } from 'react-router';
 
 class Responses extends React.Component {
@@ -22,7 +22,9 @@ class Responses extends React.Component {
 
 	render() {
 
-	let response = this.state.responses.map((resp, index) => <Response response={resp} key={index} />)
+	// console.log(this.props.comments);
+
+	let response = this.props.comments.map((c, index) => <Response comments={c} key={index} />)
 
 		return (
 			<div className="responseContainer">
@@ -30,7 +32,6 @@ class Responses extends React.Component {
 				<h3 className="responsesHeader">Responses</h3>
 				{response}
 				<hr className="divider" />
-				<ReplyForm getResponses={this.getResponses} />
 			</div>
 		)
 	}

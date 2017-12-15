@@ -16,7 +16,8 @@ class App extends Component {
     super();
 
     this.state = {
-      posts: []
+      posts: [],
+      comments: []
     }
   }
 
@@ -29,11 +30,20 @@ class App extends Component {
   };
 
   addData = (data) => {
-    data.id = this.state.posts.length + 1
+    // console.log("posts", data);
+    data.id = this.state.posts.length + 1;
     this.setState({
       posts: this.state.posts.concat(data)
-    })
+    });
     this.props.history.push(`/post/${data.id}`)
+  }
+
+  getComments = (data) => {
+    // console.log("in comments", data);
+    data.id = this.state.comments.length + 1;
+    this.setState({
+      comments: this.state.comments.concat(data)
+    });
   }
 
   goToPost = (data) => {
@@ -42,7 +52,7 @@ class App extends Component {
 
   render() {
 
-  console.log(this.props.history.location.pathname === '/')
+  // console.log(this.state.comments);
   
     return (
     <div className="App">
@@ -56,7 +66,7 @@ class App extends Component {
 
         <Route exact path="/new" render={({history}) => <Create addData={this.addData} history={history} />} />
 
-        <Route path="/post/:id" render={({history}) => <Post history={history} posts={this.state.posts} />} />
+        <Route path="/post/:id" render={({history}) => <Post history={history} posts={this.state.posts} getComments={this.getComments} comments={this.state.comments} />} />
       </Col>
     </Col>
     </Row>
