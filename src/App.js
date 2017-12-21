@@ -16,8 +16,7 @@ class App extends Component {
     super();
 
     this.state = {
-      posts: [],
-      comments: []
+      posts: []
     }
   }
 
@@ -38,22 +37,12 @@ class App extends Component {
     this.props.history.push(`/post/${data.id}`)
   }
 
-  getComments = (data) => {
-    // console.log("in comments", data);
-    data.id = this.state.comments.length + 1;
-    this.setState({
-      comments: this.state.comments.concat(data)
-    });
-  }
-
   goToPost = (data) => {
     this.props.history.push(`/post/${data.id}`)
   }
 
   render() {
 
-  // console.log(this.state.comments);
-  
     return (
     <div className="App">
     <Container fluid={true}>
@@ -66,7 +55,7 @@ class App extends Component {
 
         <Route exact path="/new" render={({history}) => <Create addData={this.addData} history={history} />} />
 
-        <Route path="/post/:id" render={({history}) => <Post history={history} posts={this.state.posts} getComments={this.getComments} comments={this.state.comments} />} />
+        <Route path="/post/:id" render={({history}) => <Post history={history} posts={this.state.posts} />} />
       </Col>
     </Col>
     </Row>
